@@ -115,7 +115,17 @@ for (let i = 0; i < 10; i++) {
 
     let randomRadius = Math.floor(Math.random() * 10 + 20);
 
-    contenido += i + " x ->" + randomX + " y -> " + randomY + " rad -> " + randomRadius;
+    if((randomX - randomRadius)<0){
+        let remaining = Math.abs(randomX - randomRadius); 
+        randomX = randomX + remaining;
+    }
+
+    if((randomX + randomRadius)>200){
+        let remaining = Math.abs(randomX - randomRadius); 
+        randomX = randomX - remaining;
+    }
+
+    contenido += i+1 + "-° x ->" + randomX + " y -> " + randomY + " rad -> " + randomRadius + "\n";
 
 
     let miCirculoMultipleNoOut = new Circle(randomX, randomY, randomRadius, "blue", i + 1, 'yellow');
@@ -125,3 +135,5 @@ for (let i = 0; i < 10; i++) {
 
     arrayCircle2[i].draw(ctxMultipleNoOut);
 }
+
+textoPrueba.innerHTML = contenido;
