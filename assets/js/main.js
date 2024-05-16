@@ -4,28 +4,10 @@ const canvasMultiple = document.getElementById("canvasMultiple");
 const canvasMultipleNoOut = document.getElementById("canvasMultipleNoOut");
 const textoPrueba = document.getElementById("textoPrueba");
 
-
 const ctx = canvasOOP.getContext("2d");
 const ctxRandom = canvasRandom.getContext("2d");
 const ctxMultiple = canvasMultiple.getContext("2d");
 const ctxMultipleNoOut = canvasMultipleNoOut.getContext("2d");
-
-const window_height = window.innerHeight;
-const window_width = window.innerWidth;
-
-
-
-
-/* canvasOOP.height = canvasOOP.offsetHeight;// window_height;
-canvasOOP.width = "100";// window_width; */
-/* 
-canvasRandom.height = "200";// window_height;
-canvasRandom.width = "200";// window_width; */
-/* 
-canvasMultiple.offsetHeight = "200";// window_height;
-canvasMultiple.width = "200";// window_width; */
-
-
 
 let randomX = Math.random() * canvasRandom.width;
 let randomY = Math.random() * canvasRandom.height;
@@ -124,6 +106,16 @@ for (let i = 0; i < 10; i++) {
         let remaining = Math.abs(randomX - randomRadius); 
         randomX = randomX - remaining;
     }
+
+     if((randomY - randomRadius)<0){
+        let remaining = Math.abs(randomY - randomRadius); 
+        randomY = randomY + remaining;
+    } 
+
+    if((randomY + randomRadius)>200){
+        let remaining = Math.abs(randomY - randomRadius); 
+        randomY = randomY - remaining;
+    } 
 
     contenido += i+1 + "-° x ->" + randomX + " y -> " + randomY + " rad -> " + randomRadius + "\n";
 
