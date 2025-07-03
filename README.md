@@ -5,7 +5,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/Angelmmc/intro-poo-canvas.svg)](https://github.com/Angelmmc/intro-poo-canvas/issues)
 
 ## About 
-This project uses the OOP in JavaScript to create four canvas that display circles with random positions and size.
+This project demonstrates Object-Oriented Programming (OOP) principles in JavaScript by generating four canvas elements, each displaying animated circles with random positions and sizes.
 
 ### Features
 
